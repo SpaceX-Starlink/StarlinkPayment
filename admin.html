@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>STARLINK后台管理</title>
+    <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#dashboard">仪表盘</a></li>
+            <li><a href="#orders">所有订单</a></li>
+        </ul>
+    </nav>
+    
+    <section id="dashboard" style="display: none;">
+        <h1>STARLINK后台管理</h1>
+        <p>欢迎查看和管理STARLINK客户订单。</p>
+    </section>
+
+    <section id="orders">
+        <h1>所有订单</h1>
+        <div class="search-bar">
+            <input type="text" id="search-orders" placeholder="搜索订单号或用户姓名...">
+            <button onclick="filterOrders()">搜索</button>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>订单号</th>
+                    <th>日期</th>
+                    <th>用户姓名</th>
+                    <th>SN码</th>
+                    <th>服务类型</th>
+                    <th>金额</th>
+                    <th>状态</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody id="admin-order-list">
+                <!-- 动态添加订单 -->
+            </tbody>
+        </table>
+    </section>
+
+    <script src="admin.js"></script>
+</body>
+</html>

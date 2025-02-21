@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>STARLINK客户服务</title>
+    <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#home">首页</a></li>
+            <li><a href="#order">下单</a></li>
+            <li><a href="#track">订单查询</a></li>
+            <li><a href="#account">账户管理</a></li>
+        </ul>
+    </nav>
+    
+    <section id="home" style="display: none;">
+        <div class="home-header">
+            <h1>欢迎使用STARLINK自动化管理系统</h1>
+        </div>
+        <div class="image-grid">
+            <div class="image-card">
+                <img src="starlink2.jpg" alt="STARLINK设备">
+            </div>
+        </div>
+        <div class="home-footer">
+            <p>Starlink 团队专注于扩展覆盖范围、提高速度并降低延迟，为我们全球超过 460 万名用户提供更好的服务，并且这个数字还在不断增长 → <a href="http://starlink.com/stories" target="_blank">http://starlink.com/stories</a></p>
+        </div>
+    </section>
+
+    <section id="order">
+        <h1>下单服务</h1>
+        <form id="order-form">
+            <label for="username">用户姓名:</label>
+            <input type="text" id="username" name="username" required>
+            
+            <label for="service">服务类型:</label>
+            <select id="service" name="service">
+                <option value="shared90">无限流量（共享90天） - ¥900</option>
+                <option value="independent">无限流量（独立Admin） - ¥1000</option>
+                <option value="contact">联系客服 - ¥1</option>
+            </select>
+            
+            <div id="device-list">
+                <!-- 动态添加设备输入 -->
+            </div>
+            
+            <button type="button" id="add-device">增加</button>
+            
+            <div class="total-display">
+                <label>总金额:</label>
+                <span id="total-display">¥0</span>
+            </div>
+            
+            <button type="submit" id="submit-order">提交订单</button>
+        </form>
+        <div id="incognito-warning" class="warning" style="display: none;">
+            <p>警告：您当前使用无痕模式，数据可能不会同步到其他窗口或页面。建议使用普通模式或联系管理员。</p>
+            <button onclick="hideWarning()">关闭提示</button>
+        </div>
+    </section>
+
+    <section id="track" style="display: none;">
+        <h1>订单查询</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>订单号</th>
+                    <th>日期</th>
+                    <th>用户姓名</th>
+                    <th>SN码</th>
+                    <th>服务类型</th>
+                    <th>金额</th>
+                    <th>状态</th>
+                </tr>
+            </thead>
+            <tbody id="order-list">
+                <!-- 动态添加订单 -->
+            </tbody>
+        </table>
+    </section>
+
+    <section id="account" style="display: none;">
+        <h1>账户管理</h1>
+        <div class="account-info">
+            <h2>用户信息</h2>
+            <p id="username-display">用户姓名: 未设置</p>
+            <p>当前套餐: 未设置</p>
+            <p>到期时间: 未设置</p>
+        </div>
+        <div class="data-usage">
+            <h2>流量使用情况</h2>
+            <p>已用: 无限 / 总共: 无限</p>
+            <div class="progress-bar">
+                <div class="progress" style="width: 100%;"></div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
