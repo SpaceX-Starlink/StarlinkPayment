@@ -7,6 +7,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
+    <div id="admin-login" class="modal">
+        <div class="modal-content">
+            <h2>后台管理登录</h2>
+            <form id="admin-login-form">
+                <label for="admin-password">密码:</label>
+                <input type="password" id="admin-password" name="admin-password" required>
+                <button type="submit">登录</button>
+            </form>
+        </div>
+    </div>
+
     <nav>
         <ul>
             <li><a href="#dashboard">仪表盘</a></li>
@@ -19,7 +30,7 @@
         <p>欢迎查看和管理STARLINK客户订单。</p>
     </section>
 
-    <section id="orders">
+    <section id="orders" style="display: none;">
         <h1>所有订单</h1>
         <div class="search-bar">
             <input type="text" id="search-orders" placeholder="搜索订单号或用户姓名...">
